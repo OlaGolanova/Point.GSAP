@@ -49,6 +49,13 @@ function findHeight(){
 }
 
 function animation(){
+    gsap.registerPlugin(TextPlugin);
+
+    gsap.to('.promo__text', {
+        duration: 2, 
+        text: "Point is an environment where you can not only work productively, but also have a good time", 
+        ease: "none"});
+
     gsap.registerPlugin(ScrollTrigger);
 
     let mm = gsap.matchMedia();
@@ -282,7 +289,6 @@ function animation(){
             scrollTrigger: {
                 trigger: '.point__wrapper',
                 start: 'top top',
-                pin: true,
                 scrub: 1
             }
         })
